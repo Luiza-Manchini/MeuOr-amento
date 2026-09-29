@@ -42,16 +42,18 @@ O aplicativo terá quatro listas no SharePoint:
 ## Lista Despesas
 
 | Nome técnico | Nome amigável | Tipo | Regra |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | Title | Descrição | Uma linha de texto | Obrigatório |
 | Valor | Valor da despesa | Moeda (R$) | Obrigatório; maior que zero |
 | DataDespesa | Data da despesa | Data, sem horário | Obrigatória |
-| DataVencimento | Vencimento | Data, sem horário | Obrigatória; inicialmente igual à data da despesa |
-| Categoria | Categoria | Escolha única | Obrigatória |
-| TipoDespesa | Tipo de despesa | Escolha única | `Fixa` ou `Variável` |
-| Status | Situação | Escolha única | `Pendente` ou `Pago`; padrão: `Pendente` |
-| DataPagamento | Data do pagamento | Data, sem horário | Opcional; preenchida ao marcar como pago |
-
+| DataVencimento | Data de vencimento | Data, sem horário | Obrigatória |
+| Categoria | Categoria | Escolha única | Obrigatória: Moradia, Alimentação, Transporte, Saúde, Educação, Lazer, Assinaturas ou Outros |
+| TipoDespesa | Tipo de despesa | Escolha única | Obrigatório: Fixa ou Variável |
+| Status | Status do pagamento | Escolha única | Obrigatório: Pendente ou Pago; padrão: Pendente |
+| DataPagamento | Data do pagamento | Data, sem horário | Preenchida quando a despesa for paga |
+| UsuarioId | Identificação do usuário | Uma linha de texto | Obrigatório; preenchido pelo aplicativo |
+| Periodo | Mês do orçamento | Número inteiro (AAAAMM) | Obrigatório; escolhido conforme a receita que pagará a despesa |
+| ChaveUsuarioPeriodo | Chave do usuário e período | Uma linha de texto | Obrigatória; preenchida pelo aplicativo no formato `UsuarioId|Periodo` |
 
 
 ## Lista Planejamentos
