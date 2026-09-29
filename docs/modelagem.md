@@ -59,10 +59,14 @@ O aplicativo terá quatro listas no SharePoint:
 ## Lista Planejamentos
 
 | Nome técnico | Nome amigável | Tipo | Regra |
-| --- | --- | --- | --- |
-| Title | Identificação | Uma linha de texto | Gerada pelo aplicativo, como `Planejamento 09/2026` |
-| ReceitaPrevista | Receita esperada | Moeda (R$) | Opcional; se preenchida, maior que zero |
-| MetaEconomia | Meta de economia | Moeda (R$) | Opcional; se preenchida, maior que zero |
+|---|---|---|---|
+| `Title` | Nome do planejamento | Uma linha de texto | Obrigatório; preenchido pelo aplicativo, por exemplo: `Planejamento 202610` |
+| `ReceitaEsperada` | Receita esperada | Moeda (R$) | Obrigatória; pode ser zero |
+| `MetaEconomia` | Meta de economia | Moeda (R$) | Opcional; preenchida quando o usuário definir uma meta |
+| `UsuarioId` | Identificação do usuário | Uma linha de texto | Obrigatório; preenchido pelo aplicativo |
+| `Periodo` | Mês do planejamento | Número inteiro | Obrigatório; formato `AAAAMM`, por exemplo `202610` |
+| `ChaveUsuarioPeriodo` | Chave do usuário e período | Uma linha de texto | Obrigatória e exclusiva; preenchida pelo aplicativo no formato `UsuarioId|Periodo` |
+
 
 
 ## Lista LimitesCategoria
