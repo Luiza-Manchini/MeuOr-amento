@@ -72,11 +72,14 @@ O aplicativo terá quatro listas no SharePoint:
 ## Lista LimitesCategoria
 
 | Nome técnico | Nome amigável | Tipo | Regra |
-| --- | --- | --- | --- |
-| Title | Identificação | Uma linha de texto | Gerada pelo aplicativo, como `Alimentação 09/2026` |
-| Categoria | Categoria | Escolha única | Obrigatória; mesmas opções da lista Despesas |
-| ValorLimite | Limite de gastos | Moeda (R$) | Obrigatório; maior que zero |
-| ChaveLimite | Chave do limite | Uma linha de texto | Obrigatória e única; combina usuário, período e categoria |
+|---|---|---|---|
+| `Title` | Nome do limite | Uma linha de texto | Obrigatório; preenchido pelo aplicativo, por exemplo: `Limite Alimentação 202610` |
+| `Categoria` | Categoria | Escolha única | Obrigatória; usar as mesmas oito opções da lista Despesas |
+| `ValorLimite` | Valor do limite | Moeda (R$) | Obrigatório; maior que zero |
+| `UsuarioId` | Identificação do usuário | Uma linha de texto | Obrigatório; preenchido pelo aplicativo; valores exclusivos: não |
+| `Periodo` | Mês do orçamento | Número inteiro | Obrigatório; formato `AAAAMM`; valores exclusivos: não |
+| `ChaveUsuarioPeriodo` | Chave do usuário e período | Uma linha de texto | Obrigatória; formato `UsuarioId|Periodo`; valores exclusivos: não; criar índice |
+| `ChaveLimite` | Chave do limite | Uma linha de texto | Obrigatória; formato `UsuarioId|Periodo|Categoria`; valores exclusivos: sim |
 
 
 
