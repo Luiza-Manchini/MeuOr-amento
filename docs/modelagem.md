@@ -29,10 +29,13 @@ O aplicativo terá quatro listas no SharePoint:
 
 | Nome técnico | Nome amigável | Tipo | Regra |
 | --- | --- | --- | --- |
-| Title | Descrição | Uma linha de texto | Obrigatório |
-| Valor | Valor recebido | Moeda (R$) | Obrigatório; maior que zero |
-| DataRecebimento | Data de recebimento | Data, sem horário | Obrigatória |
-| TipoReceita | Tipo de receita | Escolha única | Obrigatório |
+| `Title` | Descrição | Uma linha de texto | Obrigatório; preenchido pelo usuário |
+| `Valor` | Valor recebido | Moeda (R$) | Obrigatório; maior que zero |
+| `DataRecebimento` | Data de recebimento | Data, sem horário | Obrigatória; preenchida pelo usuário |
+| `TipoReceita` | Tipo de receita | Escolha única | Obrigatório; opções: **Salário** e **Freelance** |
+| `UsuarioId` | Identificador do usuário | Uma linha de texto | Obrigatório; preenchido pelo aplicativo com o ID da conta conectada |
+| `Periodo` | Mês e ano da receita | Número, sem casas decimais | Obrigatório; calculado a partir de `DataRecebimento` no formato `AAAAMM` |
+| `ChaveUsuarioPeriodo` | Chave do usuário e período | Uma linha de texto | Obrigatória; gerada pelo aplicativo a partir de `UsuarioId` e `Periodo`; **não é única** |
 
 
 
